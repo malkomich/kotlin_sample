@@ -1,4 +1,4 @@
-package com.example.malkomich.kotlinsample;
+package com.malkomich.kotlinsample.domain;
 
 /**
  * Created by malkomich on 21/05/2016.

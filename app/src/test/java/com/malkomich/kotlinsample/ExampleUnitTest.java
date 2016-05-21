@@ -1,4 +1,4 @@
-package com.example.malkomich.kotlinsample;
+package com.malkomich.kotlinsample;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.malkomich.kotlinsample;
+package com.malkomich.kotlinsample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
