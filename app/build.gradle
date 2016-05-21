@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 'android-N'
+    compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.example.malkomich.kotlinsample"
-        minSdkVersion 14
-        targetSdkVersion 'N'
+        minSdkVersion 15
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }

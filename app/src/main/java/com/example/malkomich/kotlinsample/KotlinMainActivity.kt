@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+
+import kotlinx.android.synthetic.main.content_main.message;
 
 class KotlinMainActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class KotlinMainActivity : AppCompatActivity() {
 
         val fab = findViewById(R.id.fab) as FloatingActionButton?
         fab!!.setOnClickListener { view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show() }
+
+        message.text = "Kotlin works!!"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
