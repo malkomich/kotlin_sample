@@ -1,0 +1,48 @@
+# Intellij IDEA files
+*.iml
+.idea
+
+# Android Studio files
+captures/
+.navigation/
+
+# Eclipse config files
+.metadata
+.settings/
+.project
+.factorypath
+
+# Gradle files
+.gradle/
+build/
+
+# Files for the Dalvik VM
+*.dex
+
+# Keystore files
+*.jks
+
+# OS generated files
+.DS_Store
+Thumbs.db
+.trashes
+.Trash*
+*~
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Compiled source
+bin/
+gen/
+out/
+target/
+bin/
+*.apk
+*.ap_
+*.class
+
+# Local configuration files
+local.properties
