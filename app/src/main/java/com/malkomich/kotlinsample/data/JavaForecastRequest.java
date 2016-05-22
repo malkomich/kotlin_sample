@@ -1,8 +1,7 @@
-package com.malkomich.kotlinsample.domain;
-
-import android.util.Log;
+package com.malkomich.kotlinsample.data;
 
 import com.google.gson.Gson;
+import com.malkomich.kotlinsample.data.model.JavaForecastResult;
 
 import java.io.BufferedReader;
 import java.io.IOException;

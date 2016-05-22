@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import com.malkomich.kotlinsample.R
-import com.malkomich.kotlinsample.domain.KotlinForecastRequest
+import com.malkomich.kotlinsample.data.KotlinForecastRequest
 import com.malkomich.kotlinsample.ui.adapters.KotlinForecastAdapter
 
 import kotlinx.android.synthetic.main.content_main.forecast_list

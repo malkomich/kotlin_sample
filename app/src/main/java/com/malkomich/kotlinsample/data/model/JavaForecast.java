@@ -1,7 +1,6 @@
-package com.malkomich.kotlinsample.domain;
+package com.malkomich.kotlinsample.data.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 /**

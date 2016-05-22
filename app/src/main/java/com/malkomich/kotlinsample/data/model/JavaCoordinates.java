@@ -1,4 +1,4 @@
-package com.malkomich.kotlinsample.domain;
+package com.malkomich.kotlinsample.data.model;
 
 import java.io.Serializable;
 

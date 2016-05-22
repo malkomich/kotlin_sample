@@ -2,8 +2,6 @@ package com.malkomich.kotlinsample;
 
 import android.os.AsyncTask;
 
-import com.malkomich.kotlinsample.domain.JavaForecastRequest;
-
 /**
  * Created by malkomich on 22/05/2016.
  */
