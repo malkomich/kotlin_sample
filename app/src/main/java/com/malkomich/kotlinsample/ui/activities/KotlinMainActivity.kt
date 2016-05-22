@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import com.malkomich.kotlinsample.R
-import com.malkomich.kotlinsample.domain.KotlinRequest
+import com.malkomich.kotlinsample.domain.KotlinForecastRequest
 import com.malkomich.kotlinsample.ui.adapters.KotlinForecastAdapter
 
 import kotlinx.android.synthetic.main.content_main.forecast_list
@@ -46,9 +46,10 @@ class KotlinMainActivity : AppCompatActivity() {
                 "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7"
 
         async() {
-            KotlinRequest(url).run()
+//            KotlinForecastRequest(url).run()
             uiThread { longToast("Request performed") }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

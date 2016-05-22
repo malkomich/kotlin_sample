@@ -2,10 +2,11 @@ package com.malkomich.kotlinsample.domain;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,21 +14,26 @@ import java.net.URL;
 /**
  * Created by malkomich on 22/05/2016.
  */
-public class JavaRequest {
+public class JavaForecastRequest {
 
-    private static final String TAG = JavaRequest.class.getSimpleName();
+    private static final String TAG = JavaForecastRequest.class.getSimpleName();
 
-    private String url;
+    private static final String APP_ID = "15646a06818f61f7b8d7823ca833e1ce";
+    private static final String URL =
+        "http://api.openweathermap.org/data/2" + ".5/forecast/daily?mode=json&units=metric&cnt=7";
+    private static final String COMPLETE_URL = URL + "&APPID=" + APP_ID + "&q=";
 
-    public JavaRequest(String url) {
-        this.url = url;
+    private String zipCode;
+
+    public JavaForecastRequest(String zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public void run() {
+    public JavaForecastResult execute() {
         StringBuilder output = new StringBuilder();
 
         try {
-            URL url = new URL(this.url);
+            URL url = new URL(COMPLETE_URL + zipCode);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -57,15 +63,16 @@ public class JavaRequest {
 
         String forecastJsonStr = output.toString();
 
-        Log.d(TAG, forecastJsonStr);
+        Gson gson = new Gson();
+        return gson.fromJson(forecastJsonStr, JavaForecastResult.class);
 
     }
 
-    public String getUrl() {
-        return url;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }

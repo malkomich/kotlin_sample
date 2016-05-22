@@ -6,6 +6,7 @@ buildscript {
     ext.junit_version = '4.12'
     ext.kotlin_version = '1.0.2'
     ext.anko_version = '0.8.3'
+    ext.gson_version = '2.6.2'
 
     repositories {
         jcenter()

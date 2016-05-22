@@ -2,7 +2,7 @@ package com.malkomich.kotlinsample;
 
 import android.os.AsyncTask;
 
-import com.malkomich.kotlinsample.domain.JavaRequest;
+import com.malkomich.kotlinsample.domain.JavaForecastRequest;
 
 /**
  * Created by malkomich on 22/05/2016.
@@ -17,7 +17,7 @@ public class ForecastAsyncTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        new JavaRequest(params[0]).run();
+//        new JavaForecastRequest(params[0]).run();
         return null;
     }
 
