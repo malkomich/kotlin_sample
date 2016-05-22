@@ -31,6 +31,7 @@ public class JavaCoordinates implements Serializable {
         this.lat = lat;
     }
 
+    @Override
     public String toString() {
         return "JavaCoordinates{" +
             "lon=" + lon +

@@ -18,6 +18,7 @@ class KotlinForecastRequest(val zipCode: String) {
 
     fun execute(): KotlinForecastResult {
         val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
+        Log.d(javaClass.simpleName, forecastJsonStr)
         return Gson().fromJson(forecastJsonStr, KotlinForecastResult::class.java)
     }
 }

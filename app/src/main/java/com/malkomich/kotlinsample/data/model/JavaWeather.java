@@ -51,6 +51,7 @@ public class JavaWeather implements Serializable {
         this.icon = icon;
     }
 
+    @Override
     public String toString() {
         return "JavaWeather{" +
             "id=" + id +

@@ -61,6 +61,7 @@ public class JavaCity implements Serializable {
         this.population = population;
     }
 
+    @Override
     public String toString() {
         return "JavaCity{" +
             "id=" + id +

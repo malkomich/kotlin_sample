@@ -8,43 +8,44 @@ import java.util.List;
  */
 public class JavaForecast implements Serializable {
 
-    private long date;
-    private JavaTemperature temperature;
+    private long dt;
+    private JavaTemperature temp;
     private float pressure;
     private int humidity;
     private List<JavaWeather> weather;
     private float speed;
-    private int degrees;
+    private int deg;
     private int clouds;
     private float rain;
 
-    public JavaForecast(long date, JavaTemperature temperature, float pressure, int humidity, List<JavaWeather>
-        weather, float speed, int degrees, int clouds, float rain) {
+    public JavaForecast(long dt, JavaTemperature temp, float pressure, int humidity, List<JavaWeather>
+        weather, float speed, int deg, int clouds, float rain) {
 
-        this.date = date;
-        this.temperature = temperature;
+        this.dt = dt;
+        this.temp = temp;
         this.pressure = pressure;
         this.humidity = humidity;
         this.weather = weather;
         this.speed = speed;
+        this.deg = deg;
         this.clouds = clouds;
         this.rain =rain;
     }
 
-    public long getDate() {
-        return date;
+    public long getDt() {
+        return dt;
     }
 
-    public void setDate(long date) {
-        this.date = date;
+    public void setDt(long dt) {
+        this.dt = dt;
     }
 
-    public JavaTemperature getTemperature() {
-        return temperature;
+    public JavaTemperature getTemp() {
+        return temp;
     }
 
-    public void setTemperature(JavaTemperature temperature) {
-        this.temperature = temperature;
+    public void setTemp(JavaTemperature temp) {
+        this.temp = temp;
     }
 
     public float getPressure() {
@@ -79,12 +80,12 @@ public class JavaForecast implements Serializable {
         this.speed = speed;
     }
 
-    public int getDegrees() {
-        return degrees;
+    public int getDeg() {
+        return deg;
     }
 
-    public void setDegrees(int degrees) {
-        this.degrees = degrees;
+    public void setDeg(int deg) {
+        this.deg = deg;
     }
 
     public int getClouds() {
@@ -103,15 +104,16 @@ public class JavaForecast implements Serializable {
         this.rain = rain;
     }
 
+    @Override
     public String toString() {
         return "JavaForecast{" +
-            "date=" + date +
-            ", temperature=" + temperature +
+            "dt=" + dt +
+            ", temp=" + temp +
             ", pressure=" + pressure +
             ", humidity=" + humidity +
             ", weather=" + weather +
             ", speed=" + speed +
-            ", degrees=" + degrees +
+            ", deg=" + deg +
             ", clouds=" + clouds +
             ", rain=" + rain +
             "}";

@@ -7,30 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
 import com.malkomich.kotlinsample.ForecastAsyncTask;
 import com.malkomich.kotlinsample.OnResultListener;
 import com.malkomich.kotlinsample.R;
-import com.malkomich.kotlinsample.ui.adapters.KotlinForecastAdapter;
-
-import java.util.Arrays;
-import java.util.List;
+import com.malkomich.kotlinsample.domain.model.JavaForecastList;
+import com.malkomich.kotlinsample.ui.adapters.JavaForecastAdapter;
 
 public class JavaMainActivity extends AppCompatActivity implements OnResultListener {
 
-    private List<String> items = Arrays.asList(
-        "Mon 6/23 - Sunny - 31/17",
-        "Tue 6/24 - Foggy - 21/8",
-        "Wed 6/25 - Cloudy - 22/17",
-        "Thurs 6/26 - Rainy - 18/11",
-        "Fri 6/27 - Foggy - 21/10",
-        "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
-        "Sun 6/29 - Sunny - 20/7"
-    );
+    private RecyclerView forecast_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +37,10 @@ public class JavaMainActivity extends AppCompatActivity implements OnResultListe
             }
         });
 
-        RecyclerView forecast_list = (RecyclerView) findViewById(R.id.forecast_list);
+        forecast_list = (RecyclerView) findViewById(R.id.forecast_list);
         forecast_list.setLayoutManager(new LinearLayoutManager(this));
-        forecast_list.setAdapter(new KotlinForecastAdapter(items));
 
-        String url = "http://api.openweathermap.org/data/2.5/forecast/daily?" +
-            "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7";
-
-        new ForecastAsyncTask(this).execute(url);
+        new ForecastAsyncTask(this).execute("47007");
     }
 
     @Override
@@ -81,7 +66,7 @@ public class JavaMainActivity extends AppCompatActivity implements OnResultListe
     }
 
     @Override
-    public void onResult() {
-        Toast.makeText(this, "Request performed", Toast.LENGTH_LONG).show();
+    public void onResult(JavaForecastList items) {
+        forecast_list.setAdapter(new JavaForecastAdapter(items));
     }
 }

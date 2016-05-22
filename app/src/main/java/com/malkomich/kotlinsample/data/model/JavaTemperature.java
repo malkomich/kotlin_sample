@@ -11,16 +11,16 @@ public class JavaTemperature implements Serializable {
     private float min;
     private float max;
     private float night;
-    private float evening;
-    private float morning;
+    private float eve;
+    private float morn;
 
-    public JavaTemperature(long id, float min, float max, float night, float evening, float morning) {
+    public JavaTemperature(long id, float min, float max, float night, float eve, float morn) {
         this.id = id;
         this.min = min;
         this.max = max;
         this.night = night;
-        this.evening = evening;
-        this.morning = morning;
+        this.eve = eve;
+        this.morn = morn;
     }
 
     public long getId() {
@@ -55,30 +55,31 @@ public class JavaTemperature implements Serializable {
         this.night = night;
     }
 
-    public float getEvening() {
-        return evening;
+    public float getEve() {
+        return eve;
     }
 
-    public void setEvening(float evening) {
-        this.evening = evening;
+    public void setEve(float eve) {
+        this.eve = eve;
     }
 
-    public float getMorning() {
-        return morning;
+    public float getMorn() {
+        return morn;
     }
 
-    public void setMorning(float morning) {
-        this.morning = morning;
+    public void setMorn(float morning) {
+        this.morn = morn;
     }
 
+    @Override
     public String toString() {
         return "JavaTemperature{" +
             "id=" + id +
             ", min=" + min +
             ", max=" + max +
             ", night=" + night +
-            ", evening=" + evening +
-            ", morning=" + morning +
+            ", eve=" + eve +
+            ", morn=" + morn +
             "}";
     }
 }

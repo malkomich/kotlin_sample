@@ -32,6 +32,7 @@ public class JavaForecastResult implements Serializable {
         this.list = list;
     }
 
+    @Override
     public String toString() {
         return "JavaForecastResult{" +
             "city=" + city +

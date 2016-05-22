@@ -2,10 +2,13 @@ package com.malkomich.kotlinsample;
 
 import android.os.AsyncTask;
 
+import com.malkomich.kotlinsample.domain.commands.JavaRequestForecastCommand;
+import com.malkomich.kotlinsample.domain.model.JavaForecastList;
+
 /**
  * Created by malkomich on 22/05/2016.
  */
-public class ForecastAsyncTask extends AsyncTask<String, Void, String> {
+public class ForecastAsyncTask extends AsyncTask<String, Void, JavaForecastList> {
 
     OnResultListener listener;
 
@@ -14,14 +17,14 @@ public class ForecastAsyncTask extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected String doInBackground(String... params) {
-//        new JavaForecastRequest(params[0]).run();
-        return null;
+    protected JavaForecastList doInBackground(String... params) {
+        JavaRequestForecastCommand command = new JavaRequestForecastCommand(params[0]);
+        return command.execute();
     }
 
     @Override
-    protected void onPostExecute(String result) {
-        listener.onResult();
+    protected void onPostExecute(JavaForecastList result) {
+        listener.onResult(result);
     }
 
 }
