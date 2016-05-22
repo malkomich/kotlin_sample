@@ -10,14 +10,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.malkomich.kotlinsample.ForecastAsyncTask;
+import com.malkomich.kotlinsample.OnResultListener;
 import com.malkomich.kotlinsample.R;
 import com.malkomich.kotlinsample.ui.adapters.KotlinForecastAdapter;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class JavaMainActivity extends AppCompatActivity {
+public class JavaMainActivity extends AppCompatActivity implements OnResultListener {
 
     private List<String> items = Arrays.asList(
         "Mon 6/23 - Sunny - 31/17",
@@ -48,6 +51,11 @@ public class JavaMainActivity extends AppCompatActivity {
         RecyclerView forecast_list = (RecyclerView) findViewById(R.id.forecast_list);
         forecast_list.setLayoutManager(new LinearLayoutManager(this));
         forecast_list.setAdapter(new KotlinForecastAdapter(items));
+
+        String url = "http://api.openweathermap.org/data/2.5/forecast/daily?" +
+            "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7";
+
+        new ForecastAsyncTask(this).execute(url);
     }
 
     @Override
@@ -70,5 +78,10 @@ public class JavaMainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResult() {
+        Toast.makeText(this, "Request performed", Toast.LENGTH_LONG).show();
     }
 }
