@@ -26,7 +26,7 @@ public class JavaForecastAdapter extends RecyclerView.Adapter<JavaForecastAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        JavaForecast forecast = items.getDailyForecast().get(position);
+        JavaForecast forecast = items.get(position);
         holder.getTextView().setText(
             forecast.getDate() + " - " + forecast.getDescription() + " - " + forecast.getHigh() + "/" +
                 forecast.getLow());
@@ -34,7 +34,7 @@ public class JavaForecastAdapter extends RecyclerView.Adapter<JavaForecastAdapte
 
     @Override
     public int getItemCount() {
-        return items.getDailyForecast().size();
+        return items.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

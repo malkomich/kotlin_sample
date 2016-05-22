@@ -18,6 +18,14 @@ public class JavaForecastList implements Serializable {
         this.dailyForecast = dailyForecast;
     }
 
+    public JavaForecast get(int position) {
+        return dailyForecast.get(position);
+    }
+
+    public int size() {
+        return dailyForecast.size();
+    }
+
     public String getCity() {
         return city;
     }

@@ -16,12 +16,12 @@ class KotlinForecastAdapter(val items: KotlinForecastList) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        with(items.dailyForecast[position]) {
+        with(items[position]) {
             holder.textView.text = "$date - $description - $high/$low"
         }
     }
 
-    override fun getItemCount(): Int = items.dailyForecast.size
+    override fun getItemCount(): Int = items.size()
 
     class ViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 }
